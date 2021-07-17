@@ -10,21 +10,12 @@ set(CMAKE_C_STANDARD 99)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON) # useful for mixed libraries
 
-enable_testing()
-
 # dependencies
-add_subdirectory(googletest)
+add_subdirectory(lib/googletest)
 
-set(Headers
-  Example.hpp
-)
+include_directories(include)
 
-set(Sources
-  Example.cpp
-)
+add_subdirectory(src)
 
-# When running googletest, Google Test gonna be the main program and the code
-# will be pulled as a library
-add_library(${This} STATIC ${Sources} ${Headers})
-
+enable_testing()
 add_subdirectory(tests)

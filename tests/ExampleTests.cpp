@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "../Example.hpp"
+#include "Example.hpp"
 
 TEST(SanityTests, ShouldPass) {
   EXPECT_TRUE(true);
